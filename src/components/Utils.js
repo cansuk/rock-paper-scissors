@@ -21,7 +21,10 @@ export const getRandomMove = () => {
     return moves[index];
 }
 
-export const getGameTable = (userMove, compMove) => {
+export const getWinner = (userMove, compMove) => {
+    if (!userMove || !compMove) {
+        return "";
+    }
 
     if (userMove === compMove) {
         return "equality";

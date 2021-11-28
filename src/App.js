@@ -5,16 +5,15 @@ import RightOperand from "./components/RightOperand";
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import Timer from "./components/Timer";
 import { moves } from './components/Constants';
-import { useForceUpdate, getRandomMove, getMoveImg, getGameTable } from './components/Utils';
-
+import { useForceUpdate, getRandomMove, getMoveImg, getWinner } from './components/Utils';
+import Loading from './components/Loading';
+import GameResult from './components/GameResult';
 
 const App = () => {
   const [compMove, setCompMove] = useState(moves[0]);
   const [userMove, setUserMove] = useState(null);
   const [startMove, setStartMove] = useState(false);
   const forceUpdate = useForceUpdate();
-  // const gameTable = <></>;
-  // const [GameTable, setGameTable] = useState(<></>);
 
   const handlePlayClick = () => {
     setCompMove(null);
@@ -26,7 +25,7 @@ const App = () => {
 
   const handleCounterFinished = () => {
     if (startMove && !userMove) {
-      // alert("Time is up!");
+      alert("Time is up!");
       // setGameTable(<p>Time is up!</p>);
       setStartMove(false);
     }
@@ -44,14 +43,15 @@ const App = () => {
           }} />
         </div>
         <div>Computer<hr />
-          {startMove ? "Loading" : <RightOperand compMove={getRandomMove()} handleSelection={(compMove) => setCompMove(compMove)} />}
+          {startMove ? <Loading /> : <RightOperand compMove={getRandomMove()} handleSelection={(compMove) => setCompMove(compMove)} />}
         </div>
 
-        {(startMove && <Timer initialSeconds={3} handleCounterFinished={handleCounterFinished} />) || getGameTable(userMove, compMove)}
+        {(startMove && <Timer initialSeconds={3} handleCounterFinished={handleCounterFinished} />) || <GameResult winner={getWinner(userMove, compMove)} />}
 
+        <Button onClick={handlePlayClick} className="playBtn" >Play</Button>
       </div>
-      <Button variant="primary" onClick={handlePlayClick}>Play</Button>
-    </div >
+
+    </div>
 
   );
 }

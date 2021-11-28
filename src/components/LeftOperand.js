@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import leftPaper from "../assets/left-paper-circle.png";
 import leftRock from "../assets/left-rock-circle.png";
@@ -17,8 +17,6 @@ const LeftOperand = ({ startMove, currentMove, handleSelection }) => {
 
     return (
         startMove ? <div>
-            <p> Select your move: </p>
-
             <Row>
                 <Col> <img key={leftPaper} src={leftPaper} alt="left-paper" width={80} onClick={(e) => handleSelect(e, 'paper')} /> </Col>
                 <Col> <img key={leftRock} src={leftRock} alt="left-rock" width={80} onClick={(e) => handleSelect(e, 'rock')} />  </Col>

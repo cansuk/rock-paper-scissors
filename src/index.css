@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: #ad5389;  /* fallback for old browsers */
+  background-color: #2ba66d;  /* fallback for old browsers */
   background-color: -webkit-linear-gradient(to right, #3c1053, #ad5389);  /* Chrome 10-25, Safari 5.1-6 */
   background-color: linear-gradient(to right, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
   display: flex;
@@ -26,7 +26,7 @@ code {
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr; 
-  gap: 100px;
+  gap: 50px;
   grid-template-rows:1fr 1fr;
   /* grid-auto-rows: minmax(100px, auto); */
 }
@@ -34,4 +34,48 @@ code {
 .selected-move{
   border: 3px solid yellow;
   border-radius: 50px;
+}
+
+img{
+  border: 4px solid #d1e1e4;
+  border-radius: 80px;
+}
+
+#gameResult{
+    border: 4px dotted #ffc107c9;
+    width: 300px;
+    
+    text-align: center;
+    font-size: 2.5em;
+    background-color: rgb(169, 230, 55);
+    animation-name: example;
+    animation-duration: 3s;  
+}
+@keyframes example {
+  from {background-color: rgb(3, 29, 3);}
+  to {background-color: rgb(221, 221, 6);}
+}
+
+
+.playBtn{
+  height: 40px;
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  
 }
