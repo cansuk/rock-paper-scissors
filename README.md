@@ -44,7 +44,7 @@
 <br>
 
 ## :dart: About ##
-Basic Rock-Paper-Scissors with computer. It is a pleasure to develop this tiny game which is from my childhood. :innocent: 
+Basic Rock-Paper-Scissors against computer. It was a pleasure to develop this tiny game which is from my childhood. :innocent: 
 
 
 ## :rocket: Technologies ##
